@@ -1,0 +1,789 @@
+/*cssreset*/
+*{
+  margin:0;
+  padding:0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+body{
+  background: #fff;
+  font-size: 14px;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+a{
+  color:#333;
+}
+a:hover{
+  text-decoration: none;
+}
+img{
+  vertical-align: middle;
+}
+div:after{
+  content: "";
+  display: block;
+  clear:both;
+}
+div:before{
+  content: "";
+  display: block;
+}
+.fl{
+  float:left;
+}
+.fr{
+  float:right;
+}
+/**返回顶部的链接**/
+a#back-to-top{
+  width:40px;
+  height:40px;
+  line-height:40px;
+  text-align: center;
+  color:#333;
+  border-radius: 40px;
+  text-align: center;
+  position:fixed;
+  right:-40px;
+  bottom:100px;
+  background:#ECECEC;
+  border:#ECECEC;
+  cursor: pointer;
+}
+a#back-to-top.fade-in{
+  animation: fade-in 1s linear;
+  right:50px;
+}
+a#back-to-top.fade-out{
+  animation: fade-out 1s linear;
+}
+@keyframes fade-in{
+  0% {right:-40px}
+  100% {right:50px}
+}
+@keyframes fade-out{
+  0% {right:50px}
+  100% {right:-40px}
+}
+a#back-to-top:hover{
+  background:#000;
+  color:#fff;
+}
+/*span播放图标*/
+span.btn-play,span.btn-link{
+  display:block;
+  position:absolute;
+  width:30px;
+  height:30px;
+  border-radius: 30px;
+  background:#fff;
+  left:0px;
+  top:2px;
+}
+span.btn-play>b{
+  display:block;
+  position:absolute;
+  left:12px;
+  top:9px;
+  border:6px solid transparent;
+  transform: rotate(90deg);
+  border-bottom-color:#000;
+}
+span.btn-link>b{
+  display:block;
+  position:absolute;
+  width:10px;
+  height:10px;
+  left:10px;
+  top:10px;
+  border:3px solid #000;
+  border-left:0;
+  border-bottom:0;
+  transform: rotate(45deg)
+}
+span.btn-link>i{
+  display:block;
+  position:absolute;
+  width:15px;
+  height:1px;
+  left:5px;
+  top:14px;
+  background: #000;
+}
+/*弹出框样式*/
+div.dropdown-menu{
+  min-height:500px;
+  position:fixed;
+  width:1423px;
+  height:735px;
+  top:50px;
+  left:0px;
+  border-top:1px solid #ccc;
+  z-index: 1000;
+  display: none;
+}
+div.dropdown-menu.show{
+  animation:show 1s linear;
+}
+div.dropdown-menu.hide{
+  animation:show 1s linear;
+}
+/*弹出框左边*/
+div.dropdown-menu div.affix{
+  float:left;
+  width:560px;
+  height:100%;
+  background:#efefef;
+}
+div.dropdown-menu div.affix ul{
+  margin:20px 15px 40px 120px;
+}
+div.dropdown-menu div.affix ul>li{
+  font-size:1.67em;
+}
+div.dropdown-menu div.affix ul>li.text-bold{
+  font-weight: bold;
+  padding-left:5px;
+}
+div.dropdown-menu div.affix ul>li>a{
+  display:inline-block;
+  width:425px;
+  height:50px;
+  line-height:50px;
+  padding-left:25px;
+}
+.current{
+  color:#3b6caa;
+}
+.active{
+  background:#3b6caa url(../img/menu-icon.png) no-repeat 380px center;
+  color:#fff;
+}
+div.dropdown-menu div.affix ul>li.border-top{
+  padding-top: 5px;
+  border-top:1px solid #ddd;
+  margin-top:15px;
+}
+div.dropdown-menu div.affix ul>li.border-bottom:hover{
+  background:#3b6caa;
+}
+div.dropdown-menu div.affix ul>li.border-bottom:hover>a{
+  color:#fff;
+}
+/*弹出框中developers专有样式*/
+div#developers{
+  width:140px;
+  height:60px;
+  left:400px;
+  display:none;
+}
+div#developers div.affix{
+  width:100%;
+  height:60px;
+  padding:0;
+  margin:0;
+}
+div#developers div.affix ul{
+  width:100%;
+  margin:0;
+}
+div#developers div.affix ul li{
+  padding:0;
+  margin:0;
+  height:30px;
+  font-size:16px;
+}
+div#developers div.affix ul li a{
+  padding:0;
+  font-size:16px;
+  width:100%;
+  text-align:center;
+  height:30px;
+  line-height:30px;
+}
+div#developers div.affix ul li a:hover{
+  background:#3b6caa;
+  color:#fff;
+}
+/*弹出框右边*/
+div.dropdown-menu>div.right-body{
+  margin-left:560px;
+  background:#fff;
+  height:100%;
+}
+div.dropdown-menu>div.right-body>div{
+  margin-left:20px;
+  display:none;
+}
+div.dropdown-menu>div.right-body>div.select{
+  display:block;
+}
+div.dropdown-menu>div.right-body a{
+  font-size:16px;
+  color:#3B6CAA;
+}
+div.dropdown-menu>div.right-body div.right-side>p>a{
+  font-size:14px;
+}
+div.dropdown-menu>div.right-body a.title{
+  display:block;
+  font-size:60px;
+  height:120px;
+  line-height:120px;
+}
+div.dropdown-menu>div.right-body a:hover{
+  text-decoration: underline;
+}
+div.dropdown-menu>div.right-body div.left-side{
+  width:45%;
+  float:left;
+}
+div.dropdown-menu>div.right-body div.right-side{
+  width:380px;
+  margin-left:45%;
+}
+div.dropdown-menu>div.right-body div.left-side>h3{
+  font-weight:normal;
+  line-height:30px;
+  margin-bottom:30px;
+}
+div.dropdown-menu>div.right-body p{
+  margin-bottom:20px;
+}
+div.dropdown-menu>div.right-body div.left-side>ul>li{
+  height:40px;
+  line-height:40px;
+}
+div.dropdown-menu>div.right-body div.right-side>p:last-child{
+  line-height:20px;
+}
+div.dropdown-menu>div.right-body div.right-side img{
+  margin-bottom:30px;
+}
+/*收起菜单图标*/
+div.dropdown-menu>i.hide-icon{
+  display:block;
+  width:20px;
+  height:20px;
+  border:2px solid #ccc;
+  position:relative;
+  bottom:30px;
+  left:50%;
+  transform:rotate(45deg);
+  border-right:0;
+  border-bottom:0;
+  cursor:pointer;
+}
+div.dropdown-menu>i.hide-icon:hover{
+  border-color:#3b6caa;
+}
+/*导航条部分*/
+div#nav{
+  width:100%;
+  height:50px;
+}
+div#nav>nav.navbar{
+  width:1400px;
+  margin:0 auto;
+  height:50px;
+}
+/*导航条左边*/
+nav.navbar>ul.navbar-left{
+  height:50px;
+}
+nav.navbar>ul>li{
+  float:left;
+  margin-right:30px;
+  position:relative;
+}
+/*导航条a的样式*/
+nav.navbar>ul>li>div>a{
+  font-size:18px;
+  display:block;
+  text-align:center;
+  position:relative;
+  line-height:50px;
+  height:50px;
+  text-transform: capitalize;
+  color:#323232;
+}
+/*a:after下的样式*/
+nav.navbar>ul>li>div>a:after{
+  content: "";
+  display: block;
+  width:100%;
+  height:0;
+  position:absolute;
+  bottom:0;
+  background:#3b6caa;
+  transition: height 0.5s cubic-bezier(.4,1,.4,1);
+}
+nav.navbar a:hover::after{
+  height:4px;
+}
+nav.navbar>ul.navbar-left>li>div>a:hover{
+  color:#3b6caa;
+}
+/*a里面的span下拉图标的样式*/
+nav.navbar>ul.navbar-left>li>div>a>span.caret{
+  position: relative;
+  display:inline-block;
+  width:10px;
+  height:10px;
+  border:1px solid #ccc;
+  border-top:0;
+  border-left:0;
+  transform: rotate(45deg);
+  margin-left:5px;
+  top:-5px;
+}
+/*导航条右边*/
+nav.navbar>ul.navbar-right>li.marketplace div.market{
+  color:#5b6caa;
+  width:130px;
+  height:34px;
+  line-height:34px;
+  padding:0 0 0 40px;
+  margin-top:8px;
+  border:1px solid #3b6caa;
+  background:url(../img/brifecase.png) no-repeat 5px 2px;
+}
+nav.navbar>ul.navbar-right>li.marketplace>a:hover div.market{
+  color:#fff;
+  background:#3b6caa url(../img/brifecase-hover.png) no-repeat 5px 0px;
+}
+/*导航条右边搜索框*/
+nav.navbar>ul.navbar-right>li.search-box{
+  overflow:hidden;
+}
+nav.navbar>ul.navbar-right>li.search-box>input{
+  float:left;
+  width:180px;
+  height:50px;
+  box-sizing:border-box;
+  padding:0 60px 0 10px;
+  line-height:50px;
+  border:0;
+  border-left:1px solid #ddd;
+  outline:none;
+}
+nav.navbar>ul.navbar-right>li.search-box>button{
+  float:right;
+  width:40px;
+  height:50px;
+  border:0;
+  border-right:1px solid #ddd;
+  background:url(../img/search1x.png) no-repeat center;
+  position:absolute;
+  left:140px;
+  cursor:pointer;
+}
+nav.navbar>ul.navbar-right>li.search-box>input:hover{
+  box-shadow: inset 0 -2px 2px #3b6caa, inset 2px 0 2px #3b6caa, inset -2px 0 2px #3b6caa;
+}
+nav.navbar>ul.navbar-right>li.search-box>button:hover{
+  box-shadow:inset 0 -2px 2px #3b6caa, inset 2px 0 2px #3b6caa, inset -2px 0 2px #3b6caa;
+}
+nav.navbar>ul.navbar-right>li.search-box:hover button{
+  background-image:url(../img/search1x_hover.png);
+}
+nav.navbar>ul.navbar-right>li.user  a{
+  height:50px;
+  width:20px;
+  background: url(../img/user.png) no-repeat center center;
+}
+nav.navbar>ul.navbar-right>li.dropdown-icon>div>a{
+  height:50px;
+  width:20px;
+  position:relative;
+}
+nav.navbar>ul.navbar-right>li.dropdown-icon span.menu{
+  position:absolute;
+  width:20px;
+  height:5px;
+  left:0;
+  background:#000;
+}
+/*CEO Gini背景图*/
+div.bg-rg{
+  position:relative;
+  width:100%;
+  height:600px;
+  background: url(../img/10272016_ls_wow_1366x660.jpg) center/cover no-repeat;
+}
+div.bg-content{
+  position:absolute;
+  background:rgba(0,0,0,0);
+  color:#fff;
+  margin-left:120px;
+  top:350px;
+}
+div.bg-content a{
+  position:relative;
+  display:block;
+  height:40px;
+  line-height:40px;
+  padding-left:40px;
+  font-size:16px;
+  color:#fff;
+}
+div.bg-content h1{
+  font-weight:normal;
+  font-size:3em;
+}
+div.bg-content h3{
+  font-size:18px;
+  margin:20px 0;
+}
+/*this week at IBM*/
+div.ibm-weeknews{
+  width:1200px;
+  height:500px;
+  margin:0 auto;
+}
+div.ibm-weeknews .ibm-weeknews-title{
+  height:60px;
+  line-height: 60px;
+  font-size: 3em;
+  font-weight:normal;
+  color:#555;
+  text-align: center;
+  margin:40px 0 20px;
+}
+div.ibm-weeknews>div.weeknews-details{
+  float:left;
+  width:380px;
+  overflow:hidden;
+  border:1px solid #777;
+}
+div.ibm-weeknews>div.weeknews-details>a{
+  display:block;
+  min-height:400px;
+}
+div.ibm-weeknews>div.weeknews-details>a img{
+  width:380px;
+  vertical-align: top;
+}
+div.ibm-weeknews>div.weeknews-details>a div{
+  margin:20px 0;
+  padding:0 10px;
+}
+div.ibm-weeknews>div.weeknews-details>a div h2{
+  color:#555;
+  font-size:2em;
+}
+div.ibm-weeknews>div.weeknews-details>a div h5{
+  margin:20px 0;
+  line-height:20px;
+  font-size:14px;
+}
+div.ibm-weeknews>div.weeknews-details>a div p{
+  position:relative;
+  padding-left:50px;
+  line-height:20px;
+  color:#3b6caa;
+}
+div.ibm-weeknews>div.weeknews-details>a div p span{
+  background:#3b6caa;
+}
+div.ibm-weeknews>div.weeknews-details>a div p span>b{
+  border-color:#fff;
+}
+div.ibm-weeknews>div.weeknews-details>a div p span>i{
+  background: #fff;
+}
+div.ibm-weeknews div.cogntive{
+  margin:0 30px;
+}
+/*more from world of watson*/
+div.waston-info{
+  width:100%;
+  height:580px;
+  margin-top:30px;
+  padding-top:5px;
+  background:url(../img/cognitive-bg-1600x900-1.jpg) no-repeat;
+}
+div.waston-info h1.ibm-weeknews-title{
+  color:#fff;
+}
+div.waston-info div.weeknews-details{
+  background: #fff;
+}
+/*IBM marketplace*/
+div.ibm-marketplace{
+  width:1200px;
+  margin:40px auto;
+  overflow:hidden;
+}
+/*IBM marketplace背景图左边内容相关样式*/
+div.ibm-marketplace div.bg-marketplace{
+  float:left;
+  position:relative;
+  width:50%;
+  height:510px;
+  background:url(../img/Photography@2x.jpg)center center / cover no-repeat;
+}
+div.bg-marketplace div.content{
+  position:absolute;
+  color:#fff;
+  margin:20px;
+  bottom:0px;
+  width:300px;
+  min-height:100px;
+}
+div.bg-marketplace div.content h1{
+  font-size:2.2em;
+  line-height:40px;
+}
+div.bg-marketplace div.content h3{
+  margin-bottom:20px;
+  font-size:1.56em;
+  line-height:30px;
+}
+div.bg-marketplace div.content a{
+  display: block;
+  color:#fff;
+  height:50px;
+  width:200px;
+  text-align: center;
+  line-height:50px;
+  border:3px solid #fff;
+}
+div.bg-marketplace div.content a:hover{
+  background:#fff;
+  color:#000;
+}
+/*IBM marketplace右边内容相关样式*/
+div.ibm-marketplace div.right-content{
+  width:50%;
+  float:left;
+  height:510px;
+}
+div.right-content>div{
+  width:50%;
+  height:50%;
+  float:left;
+  padding:20px;
+  background:#264a60;
+}
+div.right-content>div.watson-virtual-agent,div.right-content>div.ibm-spss-statistics{
+  background:#325c80;
+}
+div.right-content>div>a{
+  display:block;
+  width:100%;
+  height:100%;
+  padding:30px 20px 0 20px;
+  color:#fff;
+}
+div.right-content>div>a>div{
+  height:100px;
+  margin-bottom:20px;
+}
+div.right-content>div>a h3{
+  margin-bottom:30px;
+  height:40px;
+}
+div.right-content>div>a h1{
+  font-size:20px;
+  font-weight:normal;
+}
+div.right-content>div>a>p{
+  position:relative;
+  font-size:18px;
+  padding-left:40px;
+  line-height:60px;
+}
+div.right-content>div>a>p>span{
+  top:15px;
+}
+div.right-content>div>a>p>span>b{
+  border-color:#264a60;
+}
+div.right-content>div>a>p>span>i{
+  /*#325c80*/
+  background:#264a60;
+}
+div.right-content>div:hover,div.right-content>div:hover a{
+  background:#eef;
+  color:#3b6caa;
+}
+div.right-content>div:hover span{
+  background:#3b6caa;
+}
+div.right-content>div:hover b{
+  border-color:#fff;
+}
+div.right-content>div:hover i{
+  background:#fff;
+}
+/*way to make your business smarter&help can we help*/
+div.container{
+  background: #264a60;
+  width:100%;
+}
+div.container1{
+  background:#323232;
+}
+div.ibm-business-smarter,div.ibm-help-center{
+  width:1200px;
+  margin:0 120px;
+  border:1px solid transparent;
+}
+div.ibm-business-smarter>h1.title,div.ibm-help-center>h1.title{
+  margin:20px auto;
+  text-align: center;
+  color:#fff;
+  font-size:2.3em;
+  font-weight: normal;
+}
+div.way-to-smarter,div.way-to-help{
+  text-align:center;
+}
+div.way-to-smarter div.ibm-center,div.way-to-help div.ibm-help{
+  float:left;
+  width:25%;
+  height:120px;
+  padding:0 20px;
+  text-align:center;
+  margin-bottom:100px;
+}
+div.way-to-smarter div.ibm-center a,div.way-to-help div.ibm-help a{
+  display:block;
+  color:#fff;
+}
+div.way-to-smarter div.ibm-center a div.content,
+div.way-to-help div.ibm-help a div.content{
+  margin-top:10px;
+}
+div.way-to-smarter div.ibm-center a div.content h3,
+div.way-to-help div.ibm-help a div.content h3{
+  display: inline-block;
+  border-bottom: 1px solid transparent;
+  font-size:1.8em;
+  font-weight: normal;
+  line-height:40px;
+  transition:border-bottom 0.2s;
+}
+div.way-to-smarter div.ibm-center a div.content p,
+div.way-to-help div.ibm-help a div.content p{
+  line-height:30px;
+}
+div.way-to-smarter div.ibm-center a:hover div.content h3,
+div.way-to-help div.ibm-help a:hover div.content h3
+{
+  border-bottom: 1px solid #fff;
+}
+/*case study*/
+div.case-study{
+  width:100%;
+  height:600px;
+  background:url(../img/11012016_cs_praktiker_14912_2000x950.jpg) center/cover no-repeat;
+}
+div.case-study>div.content{
+  background:#fff;
+  position:relative;
+  height:540px;
+  width:60%;
+  top:30px;
+  padding:30px 60px 30px 120px;
+}
+div.case-study>div.content>h1.title{
+  font-weight: normal;
+  color:#4178BE;
+}
+div.case-study>div.content>h2{
+  margin:30px 0;
+  font-weight:normal;
+  font-size:30px;
+}
+div.case-study>div.content>div.compare{
+  width:300px;
+  display: inline-block;
+  color:#4178BE;
+}
+div.case-study>div.content>div.compare>b{
+  font-size:120px;
+
+}
+div.case-study>div.content>div.compare>span{
+  font-size:40px;
+  position:relative;
+  top:-20px;
+}
+div.case-study>div.content>div.compare>h4{
+  font-size:16px;
+  color:#333;
+}
+div.case-study>div.content>p{
+  font-size:30px;
+  color:#333;
+  margin-top:30px;
+}
+div.case-study>div.content>a{
+  display: block;
+  width:130px;
+  height:50px;
+  text-align: center;
+  line-height: 50px;
+  font-size:16px;
+  color:#fff;
+  background: #4178BE;
+  margin-top:20px;
+}
+div.case-study>div.content>a:hover{
+  background: #325C80;
+}
+/*页尾*/
+footer{
+  background: #F4F4F4;
+  width:100%;
+  overflow:hidden;
+}
+div#footer{
+  width:1200px;
+  margin:20px auto;
+}
+#footer>div{
+  float:left;
+  width:25%;
+}
+#footer>div>h3{
+  color:#464646;
+  margin-bottom:20px;
+}
+#footer>div>ul>li{
+  line-height:40px;
+}
+#footer>div>ul>li>a{
+  font-size:1.17em;
+  color:#5A5A5A;
+}
+#footer>div>ul>li>a:hover{
+  color: #3B6CBA;
+  text-decoration: underline;
+}
+#footer>div.select-region{
+  margin-left:75%;
+  margin-top:30px;
+  margin-bottom:20px;
+}
+#footer>div.select-region>select{
+  width:100%;
+  height:50px;
+  padding-left:10px;
+  line-height:50px;
+  cursor:pointer;
+}
+#footer>div.footer{
+  clear:both;
+  width:100%;
+  height:60px;
+  border-top:1px solid #ddd;
+}
+#footer>div.footer>ul>li{
+  float:left;
+  line-height:60px;
+  margin-right:20px;
+}
